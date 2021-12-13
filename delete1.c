@@ -280,7 +280,7 @@ Node *delete3(Node *pf)//prev neg
 
 	while(tn!=NULL)
 	{
-		if(tn->info >= 0 && tn!=NULL)
+		if(tn->info >= 0 /*&& tn!=NULL */)
 		{
 			qn = pn;
 			pn = tn;
