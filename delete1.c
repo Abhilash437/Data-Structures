@@ -265,8 +265,8 @@ Node *delete2(Node *pf)//delete node next to neg
 // 		p2 = p2->link;
 
 // 	T = N2->link;
+//	N2->link = N1->link;
 // 	p1->link = N2;
-// 	N2->link = N1->link;
 // 	p2->link = N1;
 // 	N1->link = T;
 
