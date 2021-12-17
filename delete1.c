@@ -39,6 +39,9 @@ int main()
 		printf("4.Delete 3\n");
 		printf("5.Disp\n");
 		printf("6.Insert right of k\n");
+		printf("7.Insert left of k\n");
+		printf("8.Destroy\n");
+		printf("9.Swap 2 nodes\n");
 			scanf("%d",&ch);
 
 		switch(ch)
@@ -90,6 +93,8 @@ int main()
 				exit(1);
 		}
 	}
+	
+	return 0;
 }
 
 Node *createnode(Node *nw)
@@ -131,45 +136,7 @@ void disp(Node *pf)
 	printf("\n");
 }
 
-// Node *delete2(Node *pf)
-// {
-// 	Node *pn,*tn;
-// 	pn = NULL;
-// 	tn = pf;
 
-	
-// 	while(tn != NULL)
-// 	{
-// 		while(tn->info<0)
-// 		{
-// 			pn = tn;
-// 			tn = tn->link;
-// 		}
-// 		if(pn == NULL)
-// 		{
-// 			pn = tn;
-// 			tn = tn->link;
-// 		}
-// 		else
-// 		{
-// 			pn->link = tn->link;
-// 			free(tn);
-// 			tn = pn->link;
-// 			if(tn != NULL)
-// 			{
-				
-// 				pn = tn;
-// 				tn = tn->link;
-// 			}
-// 		}
-// 		// pn = tn;
-// 		// tn = tn->link;
-// 	}
-
-// 	return pf;
-	
-
-// }
 
 Node *delete2(Node *pf)//delete node next to neg
 {
@@ -196,102 +163,8 @@ Node *delete2(Node *pf)//delete node next to neg
 	return pf;
 }
 
-// Node *delete3(Node *pf)//prev neg
-// {
-// 	Node *tn,*pn,*qn;
-// 	qn=pn=NULL;
-// 	tn = pf;
 
-// 	while(tn!=NULL)
-// 	{
-// 		if(tn->info >= 0 && tn!=NULL)
-// 		{
-// 			qn = pn;
-// 			pn = tn;
-// 			tn = tn->link;
-// 		}
-// 		else if(tn->info < 0)
-// 		{
-// 			if(pn==NULL && qn==NULL)
-// 			{
-// 				qn = pn;
-// 				pn = tn;
-// 				tn = tn->link;
-// 			}
-// 			else
-// 			{
-// 				if(qn==NULL)
-// 				{
-// 					pf = tn;
-// 					free(pn);
-// 					pn=NULL;
-// 				}
-// 				else
-// 				{
-// 					qn->link = tn;
-// 					free(pn);
-// 					pn = tn;
-// 					tn = tn->link;
-// 				}
-// 			}
-// 		}
-
-// 	}
-// 	return pf;
-// }
-
-
-// Node *delete1(Node *pf)
-// {
-// 	Node *p,*q,*r;
-// 	p = pf;
-// 	q = NULL;
-// 	r = NULL;
-
-// 	while(p!=NULL)
-// 	{
-// 		if(q==NULL)
-// 		{
-// 			if(p->info < 0)
-// 			{
-// 				pf = pf->link;
-// 				free(p);
-// 				p = pf;
-// 			}
-// 			else
-// 			{
-// 				r = q;
-// 				q = p;
-// 				p = p->link;
-// 			}
-// 		}
-// 		else if( q->info < 0)
-// 		{
-// 				r->link = p;
-// 				free(q);
-// 				q = p;
-// 				p = p->link;
-// 		}
-// 		else
-// 		{
-// 			if(p->info < 0)
-// 			{
-// 				q->link = p->link;
-// 				free(p);
-// 				p = q->link;
-// 			}
-// 			else
-// 			{
-// 				r = q;
-// 				q = p;
-// 				p = p->link;
-// 			}
-// 		}
-// 	}
-// 	return pf;
-// }
-
-Node *swap(Node *pf,Node *N1,Node *N2)
+Node *swap(Node *pf,Node *N1,Node *N2)//swap 2 nodes
 {
 	Node *p1,*p2,*T;
 	p1 = pf;
@@ -321,7 +194,7 @@ Node *swap(Node *pf,Node *N1,Node *N2)
 	return pf;
 }
 
-Node *delete3(Node *pf)//prev neg
+Node *delete3(Node *pf)//delete the node previous to node having a negetive key value
 {
 	Node *tn,*pn,*qn;
 	qn=pn=NULL;
@@ -366,55 +239,9 @@ Node *delete3(Node *pf)//prev neg
 }
 
 
-// Node *delete1(Node *pf)
-// {
-// 	Node *p,*q,*r;
-// 	p = pf;
-// 	q = r = NULL;
 
-// 	while(p!=NULL)
-// 	{
-// 		if(q==NULL)
-// 		{
-// 			if(p->info<0)
-// 			{
-// 				pf = pf->link;
-// 				free(p);
-// 				p = pf;
-// 			}
-// 			else
-// 			{
-// 				r = q;
-// 				q = p;
-// 				p = p->link;
-// 			}
-// 		}
-// 		else if(q->info<0)
-// 		{
-// 			r->link = p;
-// 			free(q);
-// 			q = p;
-// 			p = p->link;
-// 		}
-// 		else
-// 		{
-// 			if(p->info<0)
-// 			{
-// 				q->link = p->link;
-// 				free(p);
-// 				p = q->link;
-// 			}
-// 			else{
-// 				r = q;
-// 				q = p;
-// 				p = p->link;
-// 			}
-// 		}
-// 	}
-// 	return pf;
-// }
 
-Node *delete1(Node *pf)
+Node *delete1(Node *pf)//delete all nodes containing a negative value
 {
 	Node *temp,*pos,*prev=NULL;
 	temp = pf;
@@ -460,7 +287,7 @@ Node *searchneg(Node *pf)
 }
 
 
-Node *insertrightk(Node *pf,int k)
+Node *insertrightk(Node *pf,int k)//insert element to the right of kth node
 {
 	Node *temp,*nw,*prev=NULL;
 	int count=1;
@@ -487,7 +314,7 @@ Node *insertrightk(Node *pf,int k)
 	return pf;
 }
 
-Node *insertleftk(Node *pf,int k)
+Node *insertleftk(Node *pf,int k)//insert node to the left of kth node
 {
 	Node *temp,*nw,*prev=NULL;
 	int count=1;
@@ -517,59 +344,10 @@ Node *insertleftk(Node *pf,int k)
 	return pf;
 }
 
-// Node *delete2(Node *pf) //following a negetive element
-// {
-// 	Node *pn,*tn;
-// 	tn = pf;
-// 	pn = NULL;
-
-// 	while(tn != NULL)
-// 	{
-// 		if(pn!=NULL && pn->info < 0)
-// 		{
-// 				pn->link = tn->link;
-// 				printf("Deleting node %d\n",tn->info);
-// 				free(tn);
-// 				return pf;
-// 		}
-// 			pn = tn;
-// 			tn = tn->link;
-// 	}
-// 	return pf;
-// }
-
-// Node *delete3(Node *pf) //following a negetive element
-// {
-// 	Node *pn,*tn,*qn;
-// 	tn = pf;
-// 	pn = qn = NULL;
-
-// 	while(tn != NULL)
-// 	{
-// 		if(pn != NULL && tn->info < 0)
-// 		{
-// 			if(qn==NULL)
-// 			{
-// 				pf = pn;
-// 				printf("Deleting node %d\n",pf->info);
-// 				free(pn);
-// 			}
-// 			else
-// 			{
-// 				qn->link = tn;
-// 				printf("Deleting node %d\n",pn->info);
-// 				free(pn);
-// 			}
-// 		}
-// 			qn = pn;
-// 			pn = tn;
-// 			tn = tn->link;
-// 	}
-// 	return pf;
-// }
 
 
-Node *destroy(Node *pf)
+
+Node *destroy(Node *pf)//destroy all nodes
 {
 	Node *temp;
 	temp = pf;
