@@ -1,5 +1,5 @@
 # Data-Structures
-Deleting , Swapping, Merging, 2D array
+
 
 1.Write a function called MINIMUM which takes pointer to first node in a non-empty single
 linked list of integers, finds and returns the address of a node with minimum key value.
